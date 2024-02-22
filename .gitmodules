@@ -1,0 +1,6 @@
+[submodule "submodules/qt-easy-logger"]
+	path = submodules/qt-easy-logger
+	url = git@github.com:hanjianqiao/qt-easy-logger.git
+[submodule "submodules/qt-frameless-window"]
+	path = submodules/qt-frameless-window
+	url = git@github.com:hanjianqiao/qt-frameless-window.git
