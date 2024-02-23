@@ -22,24 +22,25 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(qt-framless-window-sample
+    qt_add_executable(qt-frameless-window-sample
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         qt-frameless-window-sample.qrc
     )
 else()
-    add_executable(qt-framless-window-sample
+    add_executable(qt-frameless-window-sample
         ${PROJECT_SOURCES}
+        qt-frameless-window-sample.qrc
     )
 endif()
 
 add_subdirectory(submodules/qt-frameless-window)
 add_subdirectory(submodules/qt-easy-logger)
-target_include_directories(qt-framless-window-sample PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/submodules")
-target_link_libraries(qt-framless-window-sample PRIVATE qt-easy-logger)
-target_link_libraries(qt-framless-window-sample PRIVATE qt-framless-window)
-target_link_libraries(qt-framless-window-sample PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_include_directories(qt-frameless-window-sample PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/submodules")
+target_link_libraries(qt-frameless-window-sample PRIVATE qt-easy-logger)
+target_link_libraries(qt-frameless-window-sample PRIVATE qt-frameless-window)
+target_link_libraries(qt-frameless-window-sample PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(qt-framless-window-sample)
+    qt_finalize_executable(qt-frameless-window-sample)
 endif()
