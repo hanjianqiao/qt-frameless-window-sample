@@ -1,27 +1,32 @@
 #ifndef SAMPLEWINDOW2_H
 #define SAMPLEWINDOW2_H
 
+#include <QTabBar>
+
 #include <qt-frameless-window/framelesswindow.h>
 
-class CustomizedTitleBarContentWidget : public QWidget
+
+class CustomTitleBar : public h::FramelessWindowTitleBar
 {
     Q_OBJECT
 public:
-    explicit CustomizedTitleBarContentWidget(QWidget *parent);
+    CustomTitleBar(QWidget *parent);
 
-};
-
-class CustomizedTitleBarControlWidget : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit CustomizedTitleBarControlWidget(QWidget *parent);
-    h::FramelessWindowMaximizeButton *maximizeButton() const;
+    void onWindowStateChanged(Qt::WindowState state) override;
+    QWidget *maximizeButton() const override;
+    QTabBar *tabBar() const;
 
 private:
-    QPushButton *m_settingButton;
+    void setTitle(const QString &title) override;
+    void setIcon(const QIcon &icon) override;
+
+signals:
+    void currentTabChange(int index);
+
+private:
+    QTabBar *m_tabBar;
     QPushButton *m_minimizeButton;
-    h::FramelessWindowMaximizeButton *m_maximizeButton;
+    QPushButton *m_maximizeButton;
     QPushButton *m_closeButton;
 };
 
