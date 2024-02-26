@@ -62,14 +62,6 @@ QTabBar *CustomTitleBar::tabBar() const{
     return m_tabBar;
 }
 
-void CustomTitleBar::setTitle(const QString &title){
-    // 什么都不做
-}
-
-void CustomTitleBar::setIcon(const QIcon &icon){
-    // 什么都不做
-}
-
 SampleWindow2::SampleWindow2()
     : FramelessWindow{}
 {

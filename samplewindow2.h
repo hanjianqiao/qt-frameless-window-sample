@@ -16,10 +16,6 @@ public:
     QWidget *maximizeButton() const override;
     QTabBar *tabBar() const;
 
-private:
-    void setTitle(const QString &title) override;
-    void setIcon(const QIcon &icon) override;
-
 signals:
     void currentTabChange(int index);
 
