@@ -7,4 +7,4 @@
 git clone --recursive --shallow-submodules https://github.com/hanjianqiao/qt-frameless-window-sample.git
 ```
 
-下载本项目使用QtCreator打开
+下载本项目使用QtCreator打开`CMakeLists.txt`或`qt-frameless-window-sample.pro`
